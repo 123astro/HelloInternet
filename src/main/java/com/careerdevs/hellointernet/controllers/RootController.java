@@ -15,6 +15,7 @@ public class RootController {
     @GetMapping("/random")
     private int randomNum(){
         return (int) (Math.floor(Math.random() * (100 - 1 + 1)) + 1);
+
     }
 
 }
