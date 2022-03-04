@@ -12,17 +12,17 @@ import org.springframework.web.client.RestTemplate;
 public class NasaController {
 
     private String myNasaKey = "aBpzdFMKtVnmgmtc3GlQYfkocCVNsCxZeBfywHM2";
-    public static String picDate = "2022-03-1";
+    //private String picDate = "2022-03-1";
     private String nasaApodEndpoint =
-            "https://api.nasa.gov/planetary/apod?date="+ picDate +"&api_key=" + myNasaKey;
+            "https://api.nasa.gov/planetary/apod?api_key=" + myNasaKey;
 
     @GetMapping("/apod")
     public Object apodHandler(RestTemplate restTemplate){
         return restTemplate.getForObject(nasaApodEndpoint, Object.class);
     }
 
-//    @GetMapping("/apod/{picDate}")
-//    public Object apodHandler(RestTemplate restTemplate, @PathVariable("picDate") picDate) {
-//        return restTemplate.getForObject(nasaApodEndpoint, Object.class);
-//    }
+    @GetMapping("/apod/{picDate}")
+    public Object apodHand(RestTemplate restTemplate, @PathVariable("picDate") String picDate ) {
+        return restTemplate.getForObject( "https://api.nasa.gov/planetary/apod?date="+ picDate +"&api_key=" + myNasaKey, Object.class);
+    }
 }
