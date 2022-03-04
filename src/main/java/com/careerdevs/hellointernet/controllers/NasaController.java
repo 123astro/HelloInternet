@@ -12,9 +12,7 @@ import org.springframework.web.client.RestTemplate;
 public class NasaController {
 
     private String myNasaKey = "aBpzdFMKtVnmgmtc3GlQYfkocCVNsCxZeBfywHM2";
-    //private String picDate = "2022-03-1";
-    private String nasaApodEndpoint =
-            "https://api.nasa.gov/planetary/apod?api_key=" + myNasaKey;
+    private String nasaApodEndpoint = "https://api.nasa.gov/planetary/apod?api_key=" + myNasaKey;
 
     @GetMapping("/apod")
     public Object apodHandler(RestTemplate restTemplate){
