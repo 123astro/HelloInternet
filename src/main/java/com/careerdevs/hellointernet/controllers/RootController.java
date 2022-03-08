@@ -7,6 +7,13 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class RootController {
 
+    /*
+    Mapping annotations
+    Method: Get
+    Path: /
+     */
+
+
     @GetMapping("/")
     private String rootRoute(){
         return "You requested the root route";
