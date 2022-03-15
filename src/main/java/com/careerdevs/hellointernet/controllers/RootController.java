@@ -11,6 +11,8 @@ public class RootController {
     Mapping annotations
     Method: Get
     Path: /
+    Host:  Localhost:4000
+    URL: http://localhost:4000/
      */
 
 
